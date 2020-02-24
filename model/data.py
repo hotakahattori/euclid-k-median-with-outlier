@@ -3,10 +3,10 @@ import numpy as np
 class Data:
 
     def __init__(self):
-        self.customer = []
+        self.customers = []
 
     def add_customer(self, dimension, size, mean, var):
-        self.customer += self._get_points(dimension, size, mean, var)
+        self.customers += self._get_points(dimension, size, mean, var)
         self.dimension = dimension
 
     def _get_points(self, dimension, size, mean, var):
