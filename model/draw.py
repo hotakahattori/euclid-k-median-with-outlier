@@ -5,9 +5,8 @@ class Draw():
     def __init__(self, data, Model):
         self.data = data
         self.model = Model
-        self.draw_result()
 
-    def draw_result(self):
+    def draw_k_median_result(self):
         if self.data.dimension == 2:
             self._draw_customers()
             self._draw_candidates()
