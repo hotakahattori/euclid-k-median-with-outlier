@@ -59,7 +59,6 @@ class Draw:
         outlier_y = []
         for i in range(len(self.model.z)):
             if self.model.z[i].value() == 1:
-                print(1)
                 outlier_x.append(self.data.customers[i][0])
                 outlier_y.append(self.data.customers[i][1])
                 plt.plot(outlier_x, outlier_y, "x")
