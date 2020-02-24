@@ -1,5 +1,6 @@
 import pulp
 
+
 class Model:
 
     def __init__(self, data, max_candidate):
@@ -35,9 +36,14 @@ class Model:
         for j in customer_index:
             for i in candidate_index:
                 for d in dimension_index:
-                    self.prob += self.x[i][d] - self.data.customers[j][d] - Big_M * (1 - self.y[i][j]) <= self.d[i][j][d]
-                    self.prob += self.data.customers[j][d] - self.x[i][d] - Big_M * (1 - self.y[i][j]) <= self.d[i][j][d]
+                    self.prob += self.x[i][d] - self.data.customers[j][d] - Big_M * (1 - self.y[i][j]) <= self.d[i][j][
+                        d]
+                    self.prob += self.data.customers[j][d] - self.x[i][d] - Big_M * (1 - self.y[i][j]) <= self.d[i][j][
+                        d]
 
-    def solve(self):
-        solver = pulp.solvers.CPLEX_CMD()
-        self.prob.solve(solver)
+    def solve(self, solver_name="cplex"):
+        if solver_name == "cplex":
+            solver = pulp.solvers.CPLEX_CMD()
+            self.prob.solve(solver)
+        else:
+            self.prob.solve()
