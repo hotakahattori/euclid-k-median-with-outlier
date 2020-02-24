@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 
-class Draw():
+
+class Draw:
 
     def __init__(self, data, Model):
         self.data = data
@@ -45,6 +46,7 @@ class Draw():
             cluster_y = cluster[i][1]
             plt.plot(cluster_x, cluster_y, "x")
 
-    def _show(self):
+    @staticmethod
+    def _show():
         plt.show()
         plt.clf()
