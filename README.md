@@ -18,7 +18,7 @@ $ pipenv shell
 
 ### CPLEX
 
-https://qiita.com/nanametal_/items/ab9492193bf48e29b5e
+https://qiita.com/nanametal_/items/ab9492193bf48e29b5ea
 
 
 
