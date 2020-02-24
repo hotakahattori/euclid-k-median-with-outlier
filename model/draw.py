@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 
-class Draw():
+
+class Draw:
 
     def __init__(self, data, Model):
         self.data = data
@@ -63,6 +64,7 @@ class Draw():
                 outlier_y.append(self.data.customers[i][1])
                 plt.plot(outlier_x, outlier_y, "x")
 
-    def _show(self):
+    @staticmethod
+    def _show():
         plt.show()
         plt.clf()
