@@ -14,6 +14,14 @@ class Draw:
             self._draw_cluster()
             self._show()
 
+    def draw_k_median_outlier_result(self):
+        if self.data.dimension == 2:
+            self._draw_customers()
+            self._draw_candidates()
+            self._draw_cluster()
+            self._draw_outlier()
+            self._show()
+
     def _draw_customers(self):
         customers_for_plot = [[] for i in range(self.data.dimension)]
         for i in range(len(self.data.customers)):
@@ -44,7 +52,16 @@ class Draw:
         for i in range(self.model.max_candidate):
             cluster_x = cluster[i][0]
             cluster_y = cluster[i][1]
-            plt.plot(cluster_x, cluster_y, "x")
+            plt.plot(cluster_x, cluster_y, ".")
+
+    def _draw_outlier(self):
+        outlier_x = []
+        outlier_y = []
+        for i in range(len(self.model.z)):
+            if self.model.z[i].value() == 1:
+                outlier_x.append(self.data.customers[i][0])
+                outlier_y.append(self.data.customers[i][1])
+                plt.plot(outlier_x, outlier_y, "x")
 
     @staticmethod
     def _show():

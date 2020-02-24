@@ -18,4 +18,4 @@ if __name__ == "__main__":
     mdoel_k_median_outlier = model.euclid_k_median_with_outlier.Model(data=data, max_candidate=3, outlier_neglect=2)
     mdoel_k_median_outlier.solve()
     draw_k_median_outlier = model.draw.Draw(data=data, Model=mdoel_k_median_outlier)
-    draw_k_median_outlier.draw_k_median_result()
+    draw_k_median_outlier.draw_k_median_outlier_result()
