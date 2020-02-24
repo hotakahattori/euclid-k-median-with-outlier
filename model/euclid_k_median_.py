@@ -41,8 +41,3 @@ class Model:
     def solve(self):
         solver = pulp.solvers.CPLEX_CMD()
         self.prob.solve(solver)
-        print(self.prob.status)
-        for i in range(3):
-            for j in range(12):
-                print(self.y[i][j].value())
-                print("a")
