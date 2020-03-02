@@ -14,6 +14,13 @@ class Draw:
             self._draw_cluster()
             self._show()
 
+    def draw_data(self):
+        if self.data.dimension == 2:
+            self._draw_customers()
+            self._draw_candidates()
+            self._show()
+
+
     def _draw_customers(self):
         customers_for_plot = [[] for i in range(self.data.dimension)]
         for i in range(len(self.data.customers)):
@@ -30,7 +37,7 @@ class Draw:
                 candidates_for_plot[d].append(self.model.x[i][d].value())
         candidates_x = candidates_for_plot[0]
         candidates_y = candidates_for_plot[1]
-        plt.plot(candidates_x, candidates_y, "*")
+        plt.plot(candidates_x, candidates_y, "*", ms=30, alpha=0.5)
 
     def _draw_cluster(self):
         cluster = [[[] for d in range(self.data.dimension)] for i in range(self.model.max_candidate)]
@@ -48,5 +55,6 @@ class Draw:
 
     @staticmethod
     def _show():
+        #plt.gca().set_aspect('equal', adjustable='box')
         plt.show()
         plt.clf()

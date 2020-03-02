@@ -10,6 +10,10 @@ pulp = "*"
 numpy = "*"
 matplotlib = "*"
 pylint = "*"
+jupyterlab = "*"
+seaborn = "*"
+pyqt5 = "*"
+ipympl = "*"
 
 [requires]
 python_version = "3.7"

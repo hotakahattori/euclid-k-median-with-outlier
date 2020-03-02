@@ -1,3 +1,4 @@
+import numpy as np
 import pulp
 
 
@@ -15,7 +16,7 @@ class Model:
         customer_index = [index for index in range(len(self.data.customers))]
         dimension_index = [i for i in range(self.data.dimension)]
 
-        Big_M = 100
+        Big_M = np.array(self.data.customers).max()
 
         self.x = pulp.LpVariable.dicts("x", (candidate_index, dimension_index))
 

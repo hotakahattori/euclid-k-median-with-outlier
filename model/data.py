@@ -16,3 +16,7 @@ class Data:
             point = np.random.normal(loc=mean, scale=var, size=dimension)
             points.append(point)
         return points
+
+    def set_customer(self, points):
+        self.customers = points
+        self.dimension = len(points[0])
